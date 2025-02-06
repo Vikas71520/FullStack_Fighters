@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Store</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      #container > div {
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid black;
+      }
+      #container > div > img {
+        width: 200px;
+        height: 250px;
+        margin: auto;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+      }
+      #pagination {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+      }
+      #pagination > li {
+        margin: 10px;
+        background-color: bisque;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px 10px;
+      }
+      #pagination > li:hover {
+        background-color: aquamarine;
+        cursor: pointer;
+      }
+      #pagination #currentPage {
+        background-color: rgb(193, 239, 27);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Twitter Store</h1>
+    <select id="select">
+      <option value="">Salary by sort</option>
+      <option value="htl">High to Low</option>
+      <option value="lth">Low to High</option>
+    </select>
+    <br /><br />
+    <ul id="pagination"></ul>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  let currentPage = 1;
+  let startIndex = 0;
+  let endIndex = 8;
+  let anotherData = [];
+  let totalPages;
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((data) => {
+      pagination(data);
+    })
+    .catch((err) => console.error(err));
+
+  // Function changeCurrentPage....
+
+  function changeCurrentPage(index) {
+    currentPage = index;
+    startIndex = (index - 1) * 8;
+    endIndex = startIndex + 8;
+    let pageAttribute = document.querySelectorAll("#pagination li");
+    pageAttribute.forEach((page) => (page.id = ""));
+    displayData(anotherData.slice(startIndex, endIndex));
+  }
+
+  // Function Pagination....
+
+  let ul = document.getElementById("pagination");
+  function pagination(arr) {
+    anotherData = [...arr];
+    totalPages = Math.ceil(anotherData.length / 8);
+    for (let i = 1; i <= totalPages; i++) {
+      let pages = document.createElement("li");
+      pages.innerText = i;
+      pages.addEventListener("click", () => {
+        changeCurrentPage(i);
+        pages.setAttribute("id", "currentPage");
+      });
+      if (i === currentPage) pages.setAttribute("id", "currentPage");
+      ul.append(pages);
+    }
+    displayData(anotherData.slice(startIndex, endIndex));
+  }
+
+  // Function sort by Price....
+
+  let selectValue = document.getElementById("select");
+  selectValue.addEventListener("change", sortByPrice);
+  function sortByPrice(arr) {
+    if (selectValue.value === "lth") {
+      anotherData.sort((a, b) => a.price - b.price);
+    } else if (selectValue.value === "htl") {
+      anotherData.sort((a, b) => b.price - a.price);
+    }
+    displayData(anotherData.slice(startIndex, endIndex));
+  }
+
+  // Function Display Data....
+
+  function displayData(result) {
+    let container = document.getElementById("container");
+    container.innerHTML = "";
+    result.forEach((element) => {
+      let cards = document.createElement("div");
+      cards.innerHTML = `
+            <img src = "${element.image}">
+            <p><strong>Category :- </strong>${element.category}</p>
+            <p><strong>Title :- </strong>${element.title}</p>
+            <p><strong>Description :- </strong>${element.description}</p>
+            <p><strong>Price :- </strong>$${element.price}</p>
+            <p><strong>Ratings :- </strong>${element.rating.rate}</p>
+            <p><strong>Count :- </strong>${element.rating.count}</p>
+            <button onclick = "addToCart('${element.id}')">Add to cart</button>
+        `;
+      container.append(cards);
+    });
+  }
+</script>
