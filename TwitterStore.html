@@ -55,9 +55,16 @@
   <body>
     <h1>Twitter Store</h1>
     <select id="select">
-      <option value="">Salary by sort</option>
+      <option value="">Sort by Price</option>
       <option value="htl">High to Low</option>
       <option value="lth">Low to High</option>
+    </select>
+    <input type="text" placeholder="Search jobs by title" id="input" />
+    <select id="selectCategory">
+      <option value="">Sort by Category</option>
+      <option value="Clothing">Clothing</option>
+      <option value="jewelery">Jewelery</option>
+      <option value="electronics">Electronics</option>
     </select>
     <br /><br />
     <ul id="pagination"></ul>
@@ -74,9 +81,48 @@
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((data) => {
+      anotherData = [...data];
       pagination(data);
     })
     .catch((err) => console.error(err));
+
+  // Category Sort Function....
+  let categorySelectValue = document.getElementById("selectCategory");
+  categorySelectValue.addEventListener("change", selectCategory);
+
+  function selectCategory() {
+    if (categorySelectValue.value === "Clothing") {
+      let filteredData = anotherData.filter((item) => {
+        return item.category.toLowerCase().includes("clothing");
+      });
+      displayData(filteredData);
+    } else if (categorySelectValue.value === "jewelery") {
+      let filteredData = anotherData.filter((item) => {
+        return item.category.toLowerCase().includes("jewelery");
+      });
+      displayData(filteredData);
+    } else if (categorySelectValue.value === "electronics") {
+      let filteredData = anotherData.filter((item) => {
+        return item.category.toLowerCase().includes("electronics");
+      });
+      displayData(filteredData);
+    }
+  }
+
+  /////////////////////////#########################??????????????????//////////////////////////////////
+
+  let input = document.getElementById("input");
+  input.addEventListener("input", searchfunction);
+
+  // Search function....
+
+  function searchfunction() {
+    let searchTerm = input.value;
+    let searchedItemArr = anotherData.filter((item) => {
+      return item.description.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    displayData(searchedItemArr);
+  }
 
   // Function changeCurrentPage....
 
