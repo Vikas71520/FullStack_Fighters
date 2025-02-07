@@ -1,0 +1,259 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#logo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+#logo img {
+    width: 80%;
+    /* max-width: 300px; */
+}
+
+#right-section {
+    width: 30%;
+    min-width: 300px;
+}
+
+#heading h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 5rem;
+}
+#heading h5 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.btn img {
+    width: 20px;
+}
+.google-btn {
+    background-color: white;
+    color: black;
+}
+.apple-btn {
+    background-color: white;
+    color: black;
+}
+.primary-btn {
+    background-color: rgb(29, 161, 242);
+    color: white;
+}
+.secondary-btn {
+    background-color: transparent;
+    color: rgb(29, 161, 242);
+    border: 1px solid gray;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+.divider hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background: gray;
+}
+.divider span {
+    padding: 0 10px;
+    color: gray;
+}
+
+.terms {
+    font-size: 0.8rem;
+    color: gray;
+}
+.terms a {
+    color: rgb(29, 161, 242);
+    text-decoration: none;
+}
+.terms a:hover{
+    text-decoration: underline;
+}
+
+.signin h6 {
+    font-size: 0.9rem;
+    margin: 2.5rem 0 0.5rem;
+}
+.signin a {
+    display: inline-block;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 8rem 0 0 0;
+}
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+#footer a {
+    color: gray;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+#footer div {
+    display: inline;
+}
+#footer div p {
+    color: gray;  
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    #container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+    #logo {
+        width: 100%;
+    }
+    #right-section {
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+#account-form-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#account-form {
+    background: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    /* height: 600px; */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#account-form h2 {
+    margin-bottom: 15px;
+}
+
+#account-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+#account-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(29, 161, 242);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#account-form button:hover {
+    background: rgb(20, 140, 220);
+}
+
+#close-form {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    #heading h1 {
+        font-size: 2rem;
+    }
+    #heading h5 {
+        font-size: 1rem;
+    }
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    #right-section {
+        width: 90%;
+    }
+    #footer {
+        font-size: 0.8rem;
+    }
+}
