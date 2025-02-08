@@ -137,8 +137,6 @@ footer {
     text-decoration: underline;
 }
 
-
-
 #footer div {
     display: inline;
 }
@@ -147,10 +145,6 @@ footer {
     font-size: 0.9rem;
     margin: 0;
 }
-
-
-
-
 
 @media screen and (max-width: 1024px) {
     #container {
@@ -166,11 +160,6 @@ footer {
     }
 }
 
-
-
-
-
-
 #account-form-container {
     display: none;
     position: fixed;
@@ -185,10 +174,9 @@ footer {
 
 #account-form {
     background: #000;
-    padding: 20px;
+    padding: 3rem;
     border-radius: 8px;
     width: 40%;
-    /* height: 600px; */
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
@@ -198,9 +186,9 @@ footer {
 }
 
 #account-form input {
-    width: 100%;
+    width: 96%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 13px 0;
     border: 1px solid gray;
     border-radius: 5px;
     background: #222;
@@ -211,7 +199,7 @@ footer {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     background: rgb(29, 161, 242);
     color: white;
     font-size: 1rem;
@@ -231,14 +219,6 @@ footer {
     color: white;
 }
 
-
-
-
-
-
-
-
-
 @media screen and (max-width: 600px) {
     #heading h1 {
         font-size: 2rem;
@@ -255,5 +235,92 @@ footer {
     }
     #footer {
         font-size: 0.8rem;
+    }
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #000; 
+    color: #fff; 
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff3333; 
+}
+
+#signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+#signin-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #333; 
+    color: #fff; 
+    font-size: 16px;
+}
+
+#signin-form input:focus {
+    border-color: rgb(20, 140, 220);  
+    outline: none;
+}
+
+#signin-form button {
+    padding: 12px;
+    background-color: rgb(20, 140, 220); 
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+#signin-form button:hover {
+    background-color: rgb(20, 140, 220); 
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+        width: 90%;
     }
 }
