@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter Profile Clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            margin: 0;
-        }
+<link rel="stylesheet" href="sidebar.css">
+<link rel="stylesheet" href="right-sidebar.css">
+<style>
+    /* ... existing code ... */
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        margin: 0;
+        padding-left: 80px; /* Add padding to body to accommodate the fixed sidebar */
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100px;
+        width: 80px; /* Reduce sidebar width */
+        height: 100vh;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .main-content {
+        flex: 1;
+        max-width: 600px;
+        margin-left: 200px; /* Increase this value to move content more to the right */
+        padding: 20px;
+    }
+
+    /* ... rest of your existing styles ... */
+        .main-content {
+  margin-left: 150px; /* Adjust this value based on your sidebar width */
+  padding: 20px;
+}
         .sidebar {
             width: 250px;
             padding: 20px;
@@ -268,6 +294,7 @@
                 <p class="show-more">Show more...</p>
             </div>
         `;
+
                 } else if (section === "Replies") {
                     content.innerHTML = `
                         <div class="replies-section">
@@ -353,19 +380,27 @@
                     });
                 });
             });
+  // Load sidebar.html into the div
+  fetch("sidebar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("sidebar-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading sidebar:", error));
+
+    fetch("right-sidebar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("right-sidebar-container").innerHTML = data;
+  })
+  .catch(error => console.error("Error loading right sidebar:", error));
+
         </script>
 </head>
 <body>
     <div class="sidebar">
-        <p>🏠 Home</p>
-        <p>🔍 Explore</p>
-        <p>🔔 Notifications</p>
-        <p>✉️ Messages</p>
-        <p>👥 Communities</p>
-        <p>⭐ Premium</p>
-        <p>✔ Verified Orgs</p>
-        <p>👤 Profile</p>
-        <button>Post</button>
+        <div id="sidebar-container"></div>
+
     </div>
     <div class="main-content">
         <div class="profile-header">
@@ -425,14 +460,6 @@
             </div>
         </div>
     </div>
-    <div class="right-sidebar">
-        <h3>You might like</h3>
-        <p>🍏 Apple</p>
-        <p>🖥 Microsoft</p>
-        <p>🚀 SpaceX</p>
-        <h3>What's happening</h3>
-        <p>#VidaaMuyarchiReview</p>
-        <p>Champions Trophy</p>
-    </div>
+    <div id="right-sidebar-container"></div>
 </body>
 </html>

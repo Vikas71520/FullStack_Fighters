@@ -1,0 +1,78 @@
+  /* Sidebar */
+
+  /* Add this CSS to your stylesheet */
+.main-content {
+  margin-left: 300px; /* Adjust this value based on your sidebar width */
+  padding: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px; /* Set a fixed width */
+  height: 100vh;
+  padding: 20px;
+  background-color: #000; /* Or whatever background color you want */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+  z-index: 1000; /* Ensures sidebar stays above other content */
+}
+  .sidebar {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 0 150px;
+    border-right: 1px solid #333;
+    position: fixed; /* Make sidebar fixed */
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Enable scrolling if content is too long */
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: rgb(245, 242, 242);
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .sidebar img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #222;
+    border-radius: 10px;
+  }
+  
+  .post-button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
