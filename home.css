@@ -1,0 +1,405 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 0 150px;
+    border-right: 1px solid #333;
+    position: fixed; 
+    height: 100vh;
+    overflow-y: auto; 
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: rgb(245, 242, 242);
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .sidebar img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #222;
+    border-radius: 10px;
+  }
+  
+  .post-button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .user-menu {
+    position: fixed;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+    width: 300px;
+    display: none;
+    z-index: 1000;
+
+}
+
+.user-menu .menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.user-menu .menu-item:hover {
+    background-color: #222;
+}
+
+.hidden {
+    display: none;
+}
+
+
+  
+  /* Main Content */
+  .main-content {
+    width: 50%; /* Adjusted width */
+    padding: 20px;
+    border-right: 1px solid #333;
+    margin-left: 400px; /* Adjusted margin to account for the fixed sidebar */
+    margin-right: 400px; /* Adjusted margin to account for the fixed who-to-follow section */
+  }
+
+.header {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Tweet Composer */
+
+/* Tweet Composer */
+.tweet-composer {
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure it fits within the main container */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Profile Picture */
+.avatar {
+    width: 48px; /* Fixed width */
+    height: 48px; /* Fixed height */
+    border-radius: 50%; /* Circular shape */
+    margin-right: 12px; /* Spacing between profile picture and content */
+}
+
+/* Compose Area */
+.compose-area {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Tweet Input */
+.tweet-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 12px;
+}
+
+.tweet-input:focus {
+    outline: none;
+}
+
+/* Reply Settings */
+.reply-settings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1da1f2;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.reply-settings i {
+    font-size: 14px;
+}
+
+/* Compose Actions */
+.compose-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.compose-actions .action-icons {
+    display: flex;
+    gap: 16px;
+    color: #1da1f2;
+}
+
+.compose-actions .action-icons i {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Tweet Button */
+.tweet-button {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tweet-button:hover {
+    background-color: #1991db;
+}
+
+.composer-header {
+    display: flex;
+    border-bottom: 1px solid #333;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.composer-header .tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    color: #71767b;
+    cursor: pointer;
+}
+
+.composer-header .tab.active {
+    color: #fff;
+    border-bottom: 2px solid #1da1f2;
+}
+
+
+
+
+
+/* Tweet Card */
+.tweet-card {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tweet-card:hover {
+    background-color: rgba(255, 254, 254, 0.03);
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tweet-header .name {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.tweet-header .username,
+.tweet-header .time {
+    color: #657786;
+}
+
+.tweet-content {
+    margin-bottom: 10px;
+}
+
+.tweet-image {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.tweet-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 425px;
+    margin-top: 10px;
+}
+
+.action-button {
+    color: #657786;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.action-button:hover {
+    color: white;
+}
+
+.action-button.liked {
+    color: #e0245e; /* Red color for liked state */
+}
+
+.action-button.liked .fa-heart {
+    color: #e0245e; /* Red color for the heart icon */
+}
+
+/* Comment button hover effect with icon and number glowing */
+.action-button.comment-btn:hover .fa-comment,
+.action-button.comment-btn:hover span {
+    color: #1da1f2; /* Twitter blue */
+    text-shadow: 0 0 10px #1da1f2, 0 0 20px #1da1f2; /* Glowing effect */
+}
+
+/* Retweet button hover effect with icon and number glowing */
+.action-button.retweet-btn:hover .fa-retweet,
+.action-button.retweet-btn:hover span {
+    color: #17bf63; /* Green */
+    text-shadow: 0 0 10px #17bf63, 0 0 20px #17bf63; /* Glowing effect */
+}
+
+/* Like button hover effect with icon and number glowing */
+.action-button.like-btn:hover .fa-heart,
+.action-button.like-btn:hover span {
+    color: #e0245e; /* Red */
+    text-shadow: 0 0 10px #e0245e, 0 0 20px #e0245e; /* Glowing effect */
+}
+
+/* Share button hover effect with icon and number glowing */
+.action-button.share-btn:hover .fa-share-square,
+.action-button.share-btn:hover span {
+    color: #1da1f2; /* Twitter blue */
+    text-shadow: 0 0 10px #1da1f2, 0 0 20px #1da1f2; /* Glowing effect */
+}
+
+
+ 
+  
+  /* Who-to-follow */
+  .who-to-follow {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    width: 350px; 
+    position: fixed; 
+    right: 0; 
+    top: 0;
+    overflow-y: auto; 
+    padding: 20px; 
+  }
+  
+  .search-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #657786;
+}
+
+.search-container input {
+    padding-left: 40px;
+    border-radius: 30px;
+    background-color: #121212;
+    border: none;
+    height: 40px;
+    width: 90%;
+    color: white;
+}
+
+.search-container input:focus {
+    background-color: #232121;
+    box-shadow: 0 0 0 1px white;
+}
+
+.trending-section {
+    background-color: #0e0e0f;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #333;
+    
+}
+
+.trending-section h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.trending-topics{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.trending-topic {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.trending-topic .tweet-count 
+{
+    font-size: x-small;
+    color: #7b7b7b;
+}
+.trending-topic .tweet-name{
+    font-size: x-small;
+    color: #7b7b7b;
+}

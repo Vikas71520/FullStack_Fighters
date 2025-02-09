@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter UI Clone</title>
+    <script
+      src="https://kit.fontawesome.com/6eca5b7b55.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+        
+      <img src="https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebdd90aef8ef8c749e848_X-EverythingApp-Logo-Twitter.jpg" alt="">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a> 
+      <a href="explore.html" style="font-weight: bold;"><i class="fas fa-search"></i> Explore</a>
+      <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+      <a href="messages.html"><i class="fas fa-envelope"></i> Messages</a> 
+      <a href="#"><i class="fas fa-robot"></i> Grok</a>
+      <a href="#"><i class="fas fa-users"></i> Communities</a>
+      <a href="#"><i class="fas fa-star"></i> Premium</a>
+      <a href="#"><i class="fas fa-bolt"></i> Verified Orgs</a>
+      <a href="#"><i class="fas fa-user"></i> Profile</a>
+      <a href="#"><i class="fas fa-ellipsis-h"></i> More</a>
+      <div class="post-button">Post</div>
+  
+      
+      <div id="user-profile" class="user-profile">
+        <img src="profilepic.jpg" alt="Profile Picture">
+        <div>
+            <div><strong>sagiransary18</strong></div>
+            <div>@sagiransary18</div>
+        </div>
+    </div>
+  </div>
+  <div id="user-menu" class="user-menu hidden">
+    <div class="menu-item">Add an existing account</div>
+    <div class="menu-item">Log out @sagiransary18</div>
+</div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+     <!-- Tweet Composer -->
+<div class="tweet-composer">
+  <!-- Header Tabs -->
+  <div class="composer-header">
+      <div class="tab active">For you</div>
+      <div class="tab">Following</div>
+  </div>
+
+  <!-- Compose Area -->
+  <div class="compose-area">
+      <!-- Profile Picture -->
+      <img src="./profilepic.jpg" alt="Profile" class="avatar">
+
+      <!-- Tweet Input and Options -->
+      <div class="compose-content" style="width: 100%;">
+          <!-- Textarea for Tweet -->
+          <textarea class="tweet-input" placeholder="What is happening?!"></textarea>
+
+          <!-- Reply Settings -->
+          <div class="reply-settings">
+              <i class="fas fa-globe"></i>
+              <span>Everyone can reply</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="compose-actions">
+              <div class="action-icons">
+                  <i class="fas fa-image"></i>
+                  <i class="fas fa-poll"></i>
+                  <i class="fas fa-smile"></i>
+                  <i class="fas fa-calendar"></i>
+                  <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <button class="tweet-button">Post</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+          <!-- Tweet Feed -->
+          <div class="tweet-feed"></div>
+      </div>
+
+      <div class="who-to-follow">
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" class="form-control" placeholder="Search Twitter">
+        </div>
+        
+        <div class="trending-section">
+            <h3>What's happening</h3>
+            <div class="trending-topics">
+                <!-- Trending topics will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<script src="./home.js"></script>

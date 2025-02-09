@@ -12,16 +12,12 @@
   </head>
   <body>
     <div class="sidebar">
-      <img
-        src="https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebdd90aef8ef8c749e848_X-EverythingApp-Logo-Twitter.jpg"
-        alt=""
-      />
-      <a href="#"><i class="fas fa-home"></i> Home</a>
-      <a href="#" style="font-weight: bold"
-        ><i class="fas fa-search"></i> Explore</a
-      >
+        
+      <img src="https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebdd90aef8ef8c749e848_X-EverythingApp-Logo-Twitter.jpg" alt="">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a> 
+      <a href="explore.html" style="font-weight: bold;"><i class="fas fa-search"></i> Explore</a>
       <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-      <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+      <a href="messages.html"><i class="fas fa-envelope"></i> Messages</a> 
       <a href="#"><i class="fas fa-robot"></i> Grok</a>
       <a href="#"><i class="fas fa-users"></i> Communities</a>
       <a href="#"><i class="fas fa-star"></i> Premium</a>
@@ -29,14 +25,20 @@
       <a href="#"><i class="fas fa-user"></i> Profile</a>
       <a href="#"><i class="fas fa-ellipsis-h"></i> More</a>
       <div class="post-button">Post</div>
-      <div class="user-profile">
-        <img src="https://via.placeholder.com/40" alt="Profile" />
+  
+      
+      <div id="user-profile" class="user-profile">
+        <img src="profile.jpg" alt="Profile Picture">
         <div>
-          <div><strong>sagiransary18</strong></div>
-          <div>@sagiransary18</div>
+            <div><strong>sagiransary18</strong></div>
+            <div>@sagiransary18</div>
         </div>
-      </div>
     </div>
+  </div>
+  <div id="user-menu" class="user-menu hidden">
+    <div class="menu-item">Add an existing account</div>
+    <div class="menu-item">Log out @sagiransary18</div>
+</div>
 
     <div class="hero">
       <header>
@@ -275,7 +277,7 @@
         </div>
         <div class="trend">
           <div class="trending-items">
-            <div class="trend-category">6 • Trending in India</div>
+            <div class="trend-category">6 • Trending in India </div>
             <div class="trend-title">#RoseDay</div>
             <div class="trend-posts">41.2K posts</div>
           </div>
@@ -1044,6 +1046,7 @@
           </div>
           <div class="dot-icon"><i class="fa-solid fa-ellipsis"></i></div>
         </div>
+       
       </section>
 
       <section class="for-you">
